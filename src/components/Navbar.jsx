@@ -4,14 +4,13 @@ import {
   Box,
   Button,
   Container,
-  IconButton,
   Toolbar,
 } from "@mui/material";
 import image01 from "../images/image-avatar.png";
 import logo from "../images/logo.png";
 import cartIcon from "../images/icon-cart.svg";
-import menuIcon from "../images/icon-menu.svg";
 import { grey } from "@mui/material/colors";
+import DrawerMenu from "./DrawerMenu";
 
 const Navbar = () => {
   const pages = ["کالکشن", "مردانه", "زنانه", "تماس با ما", "درباره ما"];
@@ -50,9 +49,7 @@ const Navbar = () => {
             }}
           >
             <Box sx={{ display: { xs: "flex", sm: "none" }, mr: 2 }}>
-              <IconButton>
-                <img alt="menu" src={menuIcon} />
-              </IconButton>
+              <DrawerMenu />
             </Box>
             <Box
               component="img"
