@@ -5,6 +5,7 @@ import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import { theme } from "./theme";
 import Navbar from "./components/Navbar";
+import Main from "./components/Main";
 
 const cacheRtl = createCache({
   key: "muirtl",
@@ -16,6 +17,7 @@ function App() {
     <CacheProvider value={cacheRtl}>
       <ThemeProvider theme={theme}>
         <Navbar />
+        <Main />
       </ThemeProvider>
     </CacheProvider>
   );
