@@ -5,6 +5,7 @@ import {
   Button,
   Container,
   Toolbar,
+  Badge 
 } from "@mui/material";
 import image01 from "../images/image-avatar.png";
 import logo from "../images/logo.png";
@@ -78,6 +79,7 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
+            <Badge badgeContent={4} color="warning" sx={{mr:"2vw"}}>
             <Box
               component="img"
               sx={{
@@ -86,8 +88,8 @@ const Navbar = () => {
               }}
               alt="Logo"
               src={cartIcon}
-              mr="2vw"
             />
+            </Badge>
             <Avatar
               alt="Avatar"
               src={image01}

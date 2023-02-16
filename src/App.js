@@ -6,6 +6,8 @@ import { prefixer } from "stylis";
 import { theme } from "./theme";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
+import store from "./redux-toolkit/store";
+import { Provider } from "react-redux";
 
 const cacheRtl = createCache({
   key: "muirtl",
@@ -14,12 +16,14 @@ const cacheRtl = createCache({
 
 function App() {
   return (
-    <CacheProvider value={cacheRtl}>
-      <ThemeProvider theme={theme}>
-        <Navbar />
-        <Main />
-      </ThemeProvider>
-    </CacheProvider>
+    <Provider store={store}>
+      <CacheProvider value={cacheRtl}>
+        <ThemeProvider theme={theme}>
+          <Navbar />
+          <Main />
+        </ThemeProvider>
+      </CacheProvider>
+    </Provider>
   );
 }
 
