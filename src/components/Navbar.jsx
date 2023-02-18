@@ -5,16 +5,20 @@ import {
   Button,
   Container,
   Toolbar,
-  Badge 
+  Badge,
 } from "@mui/material";
 import image01 from "../images/image-avatar.png";
 import logo from "../images/logo.png";
-import cartIcon from "../images/icon-cart.svg";
 import { grey } from "@mui/material/colors";
 import DrawerMenu from "./DrawerMenu";
+import { useSelector } from "react-redux";
+import CartMenu from "./CartMenu";
+
 
 const Navbar = () => {
   const pages = ["کالکشن", "مردانه", "زنانه", "تماس با ما", "درباره ما"];
+  const state = useSelector((state) => state.cart);
+
 
   return (
     <AppBar
@@ -79,16 +83,12 @@ const Navbar = () => {
               alignItems: "center",
             }}
           >
-            <Badge badgeContent={4} color="warning" sx={{mr:"2vw"}}>
-            <Box
-              component="img"
-              sx={{
-                cursor: "pointer",
-                height: { lg: 25, md: 25, sm: 20, xs: 20 },
-              }}
-              alt="Logo"
-              src={cartIcon}
-            />
+            <Badge
+              badgeContent={state.count}
+              color="warning"
+              sx={{ mr: "2vw" }}
+            >
+              <CartMenu />
             </Badge>
             <Avatar
               alt="Avatar"
